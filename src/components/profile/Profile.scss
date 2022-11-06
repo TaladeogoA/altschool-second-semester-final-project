@@ -1,0 +1,160 @@
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .loader {
+    width: 100px;
+    height: 100px;
+    border: 10px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 10px solid #3498db;
+    animation: spin 2s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+
+  .name {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .profile__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    width: 80%;
+
+    .profile__info__avatar {
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50%;
+      margin-bottom: 0.5rem;
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+    }
+
+    .profile__info__details {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      p {
+        margin: 0.2rem 0;
+      }
+    }
+
+    .profile__info__stats {
+      display: flex;
+      gap: 2rem;
+      margin-top: 1rem;
+      text-align: center;
+
+      div {
+      }
+    }
+
+    .profile__info__repos {
+      margin-top: 2rem;
+      width: 100%;
+
+      h3 {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+      }
+
+      .repos__list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        .repo {
+          a {
+            font-size: 1.2rem;
+            color: #58a6ff;
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+
+          p {
+            margin: 0.5rem 0;
+          }
+
+          .repo__status {
+            display: flex;
+            gap: 1rem;
+            justify-content: space-between;
+
+            p {
+              display: flex;
+              gap: 5px;
+              align-items: center;
+            }
+          }
+
+          .repo__language {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+
+            span {
+              display: inline-block;
+              width: 10px;
+              height: 10px;
+              border-radius: 50%;
+              margin-right: 5px;
+
+              &.yellow {
+                background-color: #f1e05a;
+              }
+
+              &.orange {
+                background-color: #e36209;
+              }
+
+              &.blue {
+                background-color: #0366d6;
+              }
+
+              &.green {
+                background-color: #22863a;
+              }
+
+              &.purple {
+                background-color: #6f42c1;
+              }
+
+              &.gray {
+                background-color: #6a737d;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

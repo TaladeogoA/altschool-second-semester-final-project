@@ -1,0 +1,43 @@
+.single-repo {
+  margin: 2rem auto;
+  text-align: center;
+  padding: 1rem;
+
+  .link {
+    color: white;
+
+    &:hover {
+      color: #58a6ff;
+      cursor: pointer;
+    }
+  }
+
+  .repo__info {
+    .repo__info__details {
+      margin-top: 1rem;
+      margin-bottom: 8rem;
+
+      a {
+        font-size: 1.2rem;
+        color: #0366d6;
+        text-decoration: none;
+        font-size: 2rem;
+        font-weight: 600;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .repo__info__stats {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
