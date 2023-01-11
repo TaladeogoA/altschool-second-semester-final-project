@@ -21,6 +21,10 @@ const Profile = () => {
     });
 
     getReposData().then((data) => {
+      // sort the data by date
+      data.sort((a, b) => {
+        return new Date(b.updated_at) - new Date(a.updated_at);
+      });
       setReposData(data);
       setLoading(false);
     });
@@ -30,6 +34,21 @@ const Profile = () => {
   const indexOfLastRepo = currentPage * reposPerPage;
   const indexOfFirstRepo = indexOfLastRepo - reposPerPage;
   const currentRepos = reposData.slice(indexOfFirstRepo, indexOfLastRepo);
+
+  // // sort repos by language on button click
+  // const sortRepos = (e) => {
+  //   const language = e.target.value;
+
+  //   if (language === "All") {
+  //     return;
+  //   } else {
+  //     const sortedRepos = reposData.filter((repo) => {
+  //       return repo.language === language;
+  //     });
+
+  //     setReposData(sortedRepos);
+  //   }
+  // };
 
   if (loading) {
     return (
@@ -73,6 +92,25 @@ const Profile = () => {
 
         <article className="profile__info__repos">
           <h3>Repositories</h3>
+
+          {/* <div className="repos__filter">
+            <button onClick={sortRepos} value="All">
+              All
+            </button>
+            <button onClick={sortRepos} value="JavaScript">
+              JavaScript
+            </button>
+            <button onClick={sortRepos} value="HTML">
+              HTML
+            </button>
+            <button onClick={sortRepos} value="CSS">
+              CSS
+            </button>
+            <button onClick={sortRepos} value="SCSS">
+              SCSS
+            </button>
+          </div> */}
+
           <div className="repos__list">
             {currentRepos?.map((repo) => {
               return (
